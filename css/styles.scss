@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: #ececec;
+}
+
+#logo {
+    width: 100%;
+    text-align: center;
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    h1 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        text-align: center;
+    }
+    #search {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 15px auto 20px auto;
+        text-align: center;
+        gap: 10px;
+        #search-input {
+            width: 100%;
+            max-width: 350px;
+            padding: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            outline-color: #033570;
+            @media (max-width: 767px) {
+                max-width: 250px;
+            }
+            &:active,
+            &:focus,
+            &:target {
+                outline: 2px solid #0073bc !important;
+            }
+        }
+        #search-button {
+            all: unset;
+            border-radius: 3px;
+            padding: 6px 12px;
+            background-color: #033570;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #fff;
+            &:hover {
+                cursor: pointer;
+                opacity: 0.5;
+                transition: 100ms opacity ease-in-out;
+            }
+            &:active,
+            &:focus,
+            &:target {
+                outline: 2px solid #0073bc !important;
+            }
+        }
+    }
+}
+
+#pokedex {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1366px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.pokemon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 225px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #fff;
+    .icons {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        .icon {
+            max-height: 16px;
+            & + .icon {
+                margin-left: 8px;
+            }
+            &:hover {
+                cursor: pointer;
+                opacity: 0.5;
+                transition: 100ms opacity ease-in-out;
+            }
+        }
+    }
+    .sprite-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        .sprite {
+            max-width: 96px;
+            max-height: 96px;
+        }
+    }
+    .number {
+        margin-bottom: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        color: #858585;
+    }
+    .name {
+        margin-bottom: 13px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.25px;
+        text-transform: uppercase;
+    }
+    .type {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.75px;
+        text-transform: uppercase;
+        color: #fff;
+        cursor: default;
+        & > * {
+            display: inline;
+            border-radius: 5px;
+            padding: 5px 8px;
+            &:nth-child(2) {
+                margin-left: 5px;
+            }
+        }
+        .normal {
+            background-color: #a4acaf;
+        }
+        .fire {
+            background-color: #fd7d24;
+        }
+        .water {
+            background-color: #4592c4;
+        }
+        .electric {
+            background-color: #eed535;
+            color: #000;
+        }
+        .grass {
+            background-color: #9bcc50;
+        }
+        .ice {
+            background-color: #51c4e7;
+        }
+        .fighting {
+            background-color: #d56723;
+        }
+        .poison {
+            background-color: #b97fc9;
+        }
+        .ground {
+            background-color: #f7de3f;
+            background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+            color: #000;
+        }
+        .flying {
+            background-color: #3dc7ef;
+            background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+        }
+        .psychic {
+            background-color: #f366b9;
+        }
+        .bug {
+            background-color: #729f3f;
+        }
+        .rock {
+            background-color: #a38c21;
+        }
+        .ghost {
+            background-color: #7b62a3;
+        }
+        .dragon {
+            background-color: #53a4cf;
+            background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%)
+        }
+        .dark {
+            background-color: #707070;
+        }
+        .steel {
+            background-color: #9eb7b8;
+        }
+        .fairy {
+            background-color: #fdb9e9;
+        }
+    }
+    .ability {
+        margin-top: 15px;
+        p {
+            text-transform: capitalize;
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}
+
+#back-to-top {
+    z-index: 9999;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    padding: 10px;
+    background-color: #033570;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    visibility: hidden;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.5 !important;
+        transition: 100ms opacity ease-in-out;
+    }
+    img {
+        max-height: 24px;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+}
